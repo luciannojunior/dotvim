@@ -14,6 +14,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jparise/vim-graphql'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tpope/vim-fireplace'
+Plug 'bhurlow/vim-parinfer'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
@@ -66,7 +68,7 @@ nnoremap <silent> <s-h> :bprevious<cr>
 " Misc
 nnoremap <silent> <leader><Space> :set nohls<cr>
 nnoremap <silent> <leader>q :q<cr>
-nnoremap <silent> <leader>e :ALEFix eslint<cr>
+nnoremap <silent> <leader>e :ALEFix prettier<cr>
 nnoremap <silent> <leader>h :set hidden <bar> close<cr>
 
 " Fugitive
