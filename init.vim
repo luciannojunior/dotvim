@@ -71,6 +71,8 @@ nnoremap <silent> <leader><Space> :set nohls<cr>
 nnoremap <silent> <leader>q :q<cr>
 nnoremap <silent> <leader>e :ALEFix prettier<cr>
 nnoremap <silent> <leader>h :set hidden <bar> close<cr>
+nmap <c-_> <Plug>CommentaryLine
+vmap <c-_> <Plug>Commentary
 
 " Fugitive
 nnoremap <silent> <leader>c :Gcommit<cr>
