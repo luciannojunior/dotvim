@@ -6,15 +6,16 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lucasecdb/vim-codedark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jparise/vim-graphql'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tpope/vim-fireplace'
 Plug 'bhurlow/vim-parinfer'
 
 " Javascript
@@ -95,6 +96,8 @@ let g:airline_right_sep=''
 let g:ale_completion_enabled=1
 
 let g:javascript_plugin_jsdoc = 1
+
+let g:ale_fix_on_save = 1
 
 let g:ale_linters = {
 \  'python': ['flake8'],
