@@ -55,7 +55,7 @@ set completeopt+=noinsert
 """ }}}1
 """ Section: Mappings {{{1
 
-let mapleader=','
+let mapleader=' '
 
 inoremap jk <ESC>
 
