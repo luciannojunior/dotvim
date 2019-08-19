@@ -23,6 +23,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'lucasecdb/vim-tsx'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -55,6 +56,15 @@ set completeopt+=noinsert
 """ Section: Mappings {{{1
 
 let mapleader=','
+
+inoremap jk <ESC>
+
+inoremap <ESC> <Nop>
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Window switching
 nnoremap <silent> <c-h> <c-w>h
