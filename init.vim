@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf.vim'
@@ -16,7 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jparise/vim-graphql'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'bhurlow/vim-parinfer'
+Plug 'chaoren/vim-wordmotion'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
@@ -24,6 +23,13 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'lucasecdb/vim-tsx'
 Plug 'posva/vim-vue'
+
+" Clojure
+Plug 'bhurlow/vim-parinfer'
+Plug 'tpope/vim-fireplace'
+
+" Go
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -97,6 +103,13 @@ command! Wq wq
 command! W w
 command! Q q
 
+" Customizing wordmotion
+nmap cw ce
+let g:wordmotion_mappings = {
+\ 'e' : 'm',
+\ 'de' : 'dm',
+\ }
+
 """ }}}1
 """ Section: Plugins options {{{1
 
@@ -109,7 +122,7 @@ let g:ale_completion_enabled=1
 
 let g:javascript_plugin_jsdoc = 1
 
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 let g:ale_linters = {
 \  'python': ['flake8'],
