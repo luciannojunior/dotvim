@@ -65,6 +65,7 @@ set completeopt+=noinsert
 let mapleader=' '
 
 inoremap jk <ESC>
+inoremap JK <ESC>
 
 inoremap <ESC> <Nop>
 
