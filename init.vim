@@ -119,12 +119,8 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='codedark'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-
-let g:ale_completion_enabled=1
-
 let g:javascript_plugin_jsdoc = 1
 
-let g:ale_fix_on_save = 0
 
 let g:ale_linters = {
 \  'python': ['flake8'],
@@ -132,6 +128,22 @@ let g:ale_linters = {
 \  'javascript': ['eslint', 'flow'],
 \  'graphql': ['gqlint']
 \}
+
+let g:ale_completion_enabled = 1
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_save = 1
+" let g:ale_lint_on_enter = 1
+let g:ale_fix_on_save = 0
+nmap <silent> <Leader>i <Plug>(ale_detail)
+nmap <silent> <Leader>l <Plug>(ale_lint)
+nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>h <Plug>(ale_hover) 
+nmap <silent> <Leader>d <Plug>(ale_go_to_definition) 
+nmap <silent> <Leader>r <Plug>(ale_find_references) 
+nmap <silent> <Leader>s :call AleSymbolSearch()<CR>
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
