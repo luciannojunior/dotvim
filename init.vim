@@ -85,7 +85,7 @@ nnoremap <silent> <s-l> :bnext<cr>
 nnoremap <silent> <s-h> :bprevious<cr>
 
 " Misc
-nnoremap <silent> <leader><Space> :set nohls<cr>
+nnoremap <silent> <leader>, :set nohls<cr>
 nnoremap <silent> <leader>q :q<cr>
 nnoremap <silent> <leader>e :ALEFix prettier<cr>
 nnoremap <silent> <leader>h :set hidden <bar> close<cr>
