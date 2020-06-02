@@ -24,6 +24,7 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'lucasecdb/vim-tsx'
 Plug 'posva/vim-vue'
+Plug 'neoclide/jsonc.vim'
 
 " Clojure
 Plug 'bhurlow/vim-parinfer'
@@ -147,7 +148,7 @@ let g:ale_sign_warning = '⚠'
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.ts,*.tsx'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
@@ -157,7 +158,7 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.vue'
 " filetypes like xml, html, xhtml, ...
 " These are the file types where this plugin is enabled.
 "
-let g:closetag_filetypes = 'html,xhtml,phtml,vue'
+let g:closetag_filetypes = 'html,xhtml,phtml,vue,javascript,typescript'
 
 " filetypes like xml, xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
