@@ -100,6 +100,7 @@ nnoremap <leader>p :Gpush<cr>
 
 " Fuzzy finder
 nnoremap <TAB> :GFiles && git ls-files -o --exclude-standard<cr>
+nnoremap <leader>t :GFiles && git ls-files -o --exclude-standard<cr>
 
 command! WQ wq
 command! Wq wq
