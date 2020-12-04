@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 """ Section: Packages {{{1
 
-Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -59,6 +59,26 @@ set mouse=a
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 set completeopt+=noinsert
+set updatetime=300
+
+
+if exists('g:gui_oni')	" Better display for messages
+  set laststatus=0	set cmdheight=2
+  set noshowmode	
+  set noruler	" don't give |ins-completion-menu| messages.
+  set noshowcmd	set shortmess+=c
+else	
+  set laststatus=2	" always show signcolumns
+endif
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
+set signcolumn=yes
+
+set laststatus=2
+
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
 
 """ }}}1
 """ Section: Mappings {{{1
@@ -88,10 +108,29 @@ nnoremap <silent> <s-h> :bprevious<cr>
 " Misc
 nnoremap <silent> <leader>, :set nohls<cr>
 nnoremap <silent> <leader>q :q<cr>
-nnoremap <silent> <leader>e :ALEFix prettier<cr>
 nnoremap <silent> <leader>h :set hidden <bar> close<cr>
 nmap <c-_> <Plug>CommentaryLine
 vmap <c-_> <Plug>Commentary
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 
 " Fugitive
 nnoremap <silent> <leader>c :Gcommit<cr>
@@ -131,21 +170,6 @@ let g:ale_linters = {
 \  'graphql': ['gqlint']
 \}
 
-let g:ale_completion_enabled = 1
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_save = 1
-" let g:ale_lint_on_enter = 1
-let g:ale_fix_on_save = 0
-nmap <silent> <Leader>i <Plug>(ale_detail)
-nmap <silent> <Leader>l <Plug>(ale_lint)
-nmap <silent> <Leader>j <Plug>(ale_next_wrap)
-nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>h <Plug>(ale_hover) 
-nmap <silent> <Leader>d <Plug>(ale_go_to_definition) 
-nmap <silent> <Leader>r <Plug>(ale_find_references) 
-nmap <silent> <Leader>s :call AleSymbolSearch()<CR>
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
